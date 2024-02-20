@@ -10,7 +10,7 @@
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
-  {% if template contains 'index' %}  <script src="https://cdn.tailwindcss.com"></script> {% endif %}
+ 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
@@ -352,5 +352,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+     {% if template contains 'index' %}  <script src="https://cdn.tailwindcss.com"></script> {% endif %}
   </body>
 </html>
